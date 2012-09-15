@@ -28,7 +28,9 @@ class Courses extends Spine.Controller
 
     Course.bind("refresh", @render)
     Course.bind("create", @createCourse)
-    Course.fetch()
+    # Course.fetch()
+    Course.refresh({id: "cis100", status: "open"})
+
 
   render:  =>
     console.log 'running render'

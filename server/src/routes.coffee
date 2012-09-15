@@ -1,4 +1,4 @@
-app_name = 'Amplify Me!'
+app_name = 'Course Alert'
 
 # home page
 exports.index = (req, res) ->

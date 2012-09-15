@@ -11,7 +11,7 @@ h1 Course Alert
     p items go here
 
   script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
-    <li class="item">Course:${id} <span>(OPEN/CLOSED)</span></li>
+    <li class="item">Course:${id} <span>(${status})</span></li>
 
 script(src='/application.js', type='text/javascript', charset='utf-8')
 
