@@ -6,7 +6,7 @@ fs = require 'fs'
 
 csv = require 'csv'
 
-exports.courses_csv = (req, res) ->
+exports.all_courses_csv = (req, res) ->
 
     results = []
 
@@ -14,7 +14,7 @@ exports.courses_csv = (req, res) ->
     .fromPath(__dirname + '/../../../class_data.csv')
     .on('data', (data, index) ->
 
-        results.push(data)
+        results.push({id: data[0], status: data[1]})
     )
     .on('end', ->
         res.send(results)

@@ -47,7 +47,7 @@ class Courses extends Spine.Controller
   submit: (e) =>
     e.preventDefault()
     i = @input.val()
-    course = Course.create(name: i)
+    course = Course.create(id: i)
     if course
       course.save()
       @change course
