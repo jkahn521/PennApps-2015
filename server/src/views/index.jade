@@ -2,32 +2,33 @@
 link(rel='stylesheet', href='/assets/stylesheets/index.css')
 h1 Course Alert
 
-#courses
-  form
-    input(type='text', placeholder='Add course...')
+#spine_app
+  #courses
+    form
+      input(type='text', placeholder='Add course...')
 
 
-  ul.items
-    p items go here
+    ul.items
+      p items go here
 
-  script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
-    <li class="item">Course:${id} <span>(${status})</span></li>
-
-
-#all_courses
-  ul.items
-    p all courses go here
-
-  script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
-    <li class="item">Course:${id} <span>(${status})</span><button>Add course</button></li>
+    script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
+      <li class="item">Course:${id} <span>(${status})</span></li>
 
 
-script(src='/application.js', type='text/javascript', charset='utf-8')
+  #all_courses
+    ul.items
+      p all courses go here
 
-script(type='text/javascript')
-    require("assets/lib/jquery");
-    var exports = this;
-    jQuery(function(){
-        var Courses = require("scripts/controllers/courses");
-        exports.courses = new Courses({el: $("#courses")});
-    });
+    script#all_course_template(type='text/x-jquery-tmpl', charset='utf-8')
+      <li class="item">Course:${id} <span>(${status})</span><button>Add course</button></li>
+
+
+  script(src='/application.js', type='text/javascript', charset='utf-8')
+
+  script(type='text/javascript')
+      require("assets/lib/jquery");
+      var exports = this;
+      jQuery(function(){
+          var Courses = require("scripts/controllers/courses");
+          exports.courses = new Courses({el: $("#courses")});
+      });
