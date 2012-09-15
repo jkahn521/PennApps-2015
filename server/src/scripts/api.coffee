@@ -6,7 +6,7 @@ fs = require 'fs'
 
 csv = require 'csv'
 
-exports.test_csv = (req, res) ->
+exports.courses_csv = (req, res) ->
 
     results = []
 
