@@ -50,8 +50,11 @@ app.configure 'production', ->
 
 # Routes
 app.get '/', routes.index
+app.get '/amplify', routes.amplify
 # app.get '/:hash', getTag, routes.amplify #ADD REGEX
 # app.get '/api/users', api.get_users
+app.get '/csv', api.test_csv
+
 
 # app.get '/api/amplifyme', api.get_amplifyme
 # app.post '/api/amplifyme', api.post_amplifyme
@@ -64,6 +67,5 @@ app.listen port, ->
 
 # # Initialize sockets
 # sockets.init app
-
 
 
