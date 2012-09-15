@@ -6,4 +6,7 @@ class Course extends Spine.Model
   @extend Spine.Model.Ajax
   # @url: "/api/"
 
+  # validate: ->
+  #   ''
+
 module.exports = Course
