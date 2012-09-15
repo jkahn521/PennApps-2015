@@ -2,7 +2,7 @@ express    = require 'express'
 routes     = require './routes'
 api        = require './scripts/api'
 
-data   = require './scripts/data/api'
+# data   = require './scripts/data/api'
 
 
 # Added by Josh --------------------------------------------------------
@@ -50,20 +50,20 @@ app.configure 'production', ->
 
 # Routes
 app.get '/', routes.index
-app.get '/:hash', getTag, routes.amplify #ADD REGEX
-app.get '/api/users', api.get_users
+# app.get '/:hash', getTag, routes.amplify #ADD REGEX
+# app.get '/api/users', api.get_users
 
-app.get '/api/amplifyme', api.get_amplifyme
-app.post '/api/amplifyme', api.post_amplifyme
-app.post '/api/tags/:id/info', api.post_tag_info
+# app.get '/api/amplifyme', api.get_amplifyme
+# app.post '/api/amplifyme', api.post_amplifyme
+# app.post '/api/tags/:id/info', api.post_tag_info
 
 # Heroku ports or 3000
 port = process.env.PORT || 3000
 app.listen port, ->
     console.log 'Express server listening on port %d in %s mode', app.address().port, app.settings.env
 
-# Initialize sockets
-sockets.init app
+# # Initialize sockets
+# sockets.init app
 
 
 

@@ -2,10 +2,12 @@ app_name = 'Amplify Me!'
 
 # home page
 exports.index = (req, res) ->
-    if !req.user?
-        res.render 'home', {title: app_name}
-    else
-        res.render 'index', {title: app_name, user: req.user}
+  res.render 'index', {title: app_name, user: req.user}
+    ## old code
+    # if !req.user?
+    #     res.render 'home', {title: app_name}
+    # else
+    #     res.render 'index', {title: app_name, user: req.user}
 
 # amplify a tag
 exports.amplify = (req, res) ->
