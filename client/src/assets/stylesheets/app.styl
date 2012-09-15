@@ -1,0 +1,53 @@
+@import 'nib'
+@import './defaults'
+
+header
+    width 100%
+    height 100px
+    margin 0px
+    padding 0px
+    background-color mainColor
+    border-bottom 3px solid accentColor
+    
+    a
+        text-decoration none
+    h1
+        font-family Chunkfive
+        font-size 60px
+        margin 0px
+        padding 0px
+        relative top 20px
+        color white
+        font-weight normal
+        text-align center
+        text-shadow black 0px 1px 2px
+
+    img
+        absolute left 50% top 5px
+        margin-left 165px
+
+body 
+    background-color backgroundColor
+
+    .background_overlay
+        width 100%
+        height 100%
+        position absolute
+        background rgba(0,0,0,0.5)
+        background-size cover
+        top 0
+        left 0
+        bottom 0
+        right 0
+        z-index 10
+        display none
+
+#content
+    width 960px
+    margin 0 auto
+
+
+#sign-in-with-twitter
+  width 300px
+  &:hover
+    cursor pointer
