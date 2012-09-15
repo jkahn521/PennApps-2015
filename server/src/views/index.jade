@@ -13,6 +13,15 @@ h1 Course Alert
   script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
     <li class="item">Course:${id} <span>(${status})</span></li>
 
+
+#all_courses
+  ul.items
+    p all courses go here
+
+  script#course_template(type='text/x-jquery-tmpl', charset='utf-8')
+    <li class="item">Course:${id} <span>(${status})</span><button>Add course</button></li>
+
+
 script(src='/application.js', type='text/javascript', charset='utf-8')
 
 script(type='text/javascript')
