@@ -8,16 +8,19 @@ csv = require 'csv'
 
 exports.all_courses_csv = (req, res) ->
 
-    results = []
+  results = []
 
-    csv()
-    .fromPath(__dirname + '/../../../class_data.csv')
-    .on('data', (data, index) ->
+  csv()
+  .fromPath(__dirname + '/../../../class_data.csv')
+  .on('data', (data, index) ->
 
-        results.push({id: data[0], status: data[1]})
-    )
-    .on('end', ->
-        res.send(results)
-    )
+    f = []
 
-    
+    for name, i in data when i > 1
+      f.push(name)
+
+    results.push({id: data[0], status: data[1], followers: f})
+  )
+  .on('end', ->
+      res.send(results)
+  )    
