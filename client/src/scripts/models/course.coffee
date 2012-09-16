@@ -13,6 +13,7 @@ class Course extends Spine.Model
     console.log 'before ' + @followers
     for c in @followers
       if (user == c)
+        alert "you're already enrolled in that course"
         return @followers
     f = @followers
     f.push(user)

@@ -45,16 +45,21 @@ class Courses extends Spine.Controller
     @change(item)
 
   submit: (e) =>
-    e.preventDefault()
-    i = @input.val()
-    course = Course.find(i)
-    if course
-      course.addFollower("olliejkahn@yahoo.com")
-      @change course
-      @input.val("")
-    else
-      alert 'course does not exist'
-    # course = Course.create(id: i)
+    try
+      e.preventDefault()
+      i = @input.val()
+      course = Course.find(i)
+      if course
+        course.addFollower("olliejkahn@yahoo.com")
+        @change course
+        @input.val("")
+      else
+        alert 'course does not exist'
+      @render()
+    catch error
+      alert 'that course does not exist'
+
+      # course = Course.create(id: i)
     # if course
     #   course.save()
     #   @change course
