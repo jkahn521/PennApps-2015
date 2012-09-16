@@ -27,3 +27,5 @@ exports.all_courses_csv = (req, res) ->
 
 exports.follow_course = (req, res) ->
   console.log 'follow course'
+  console.log 'id is ' + req.params.id
+  console.log 'course is ' + req.params.course
