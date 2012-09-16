@@ -3,14 +3,9 @@ routes     = require './routes'
 api        = require './scripts/api'
 email = require './scripts/email'
 
-# data   = require './scripts/data/api'
-
-
 # Added by Josh --------------------------------------------------------
 require 'coffee-script'
 stitch = require 'stitch'
-
-#dependencies_path = __dirname + '/../../client/src/assets/lib/'
 
 src_path = __dirname + "/../../client/src/"
 
@@ -51,17 +46,9 @@ app.configure 'production', ->
 
 # Routes
 app.get '/', routes.index
-app.get '/amplify', routes.amplify
-# app.get '/:hash', getTag, routes.amplify #ADD REGEX
-# app.get '/api/users', api.get_users
 app.get '/courses', api.all_courses_csv
 app.post '/follow/:course/:id', api.follow_course
 app.get '/email', api.send_email
-
-
-# app.get '/api/amplifyme', api.get_amplifyme
-# app.post '/api/amplifyme', api.post_amplifyme
-# app.post '/api/tags/:id/info', api.post_tag_info
 
 # Heroku ports or 3000
 port = process.env.PORT || 3000
