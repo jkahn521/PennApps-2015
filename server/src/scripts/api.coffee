@@ -46,7 +46,7 @@ exports.send_email = (req, res) ->
     from: "Course Alert <mycoursealert@gmail.com>", 
     to: "pennappsdemo@gmail.com",
     subject: "Course Alert", 
-    text: "You have a course alert for COURSE", 
+    text: "", 
     html: "HTML COURSE" 
   }
 
