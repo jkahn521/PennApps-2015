@@ -28,7 +28,6 @@ email_user = (user, course) ->
       console.log(error)
     else
       console.log("Message sent: " + response.message)
-      res.send('Email was sent')
   )
 
 exports.check_courses = ->
