@@ -1,4 +1,4 @@
-exports.email_user = (user, course) ->
+email_user = (user, course) ->
   console.log 'EMAIL USER'
 
   smtpTransport = nodemailer.createTransport("SMTP",{
@@ -24,3 +24,6 @@ exports.email_user = (user, course) ->
   #     console.log("Message sent: " + response.message)
   #     res.send('Email was sent')
   # )
+
+exports.check_courses = ->
+  console.log 'check courses'

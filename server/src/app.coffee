@@ -71,6 +71,6 @@ app.listen port, ->
 # # Initialize sockets
 # sockets.init app
 
-email.email_user()
+email.check_courses()
 
 
