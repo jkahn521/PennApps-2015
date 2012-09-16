@@ -36,9 +36,6 @@ exports.check_courses = ->
 
 check_course_helper = ->
   console.log 'check course helper'
-  # check if each course is open
-
-  # email_data = []
 
   csv()
   .fromPath(__dirname + '/../../../class_data.csv')
@@ -49,15 +46,14 @@ check_course_helper = ->
     for name, i in data when i > 1
       f.push(name)
 
-    # email_data.push({id: data[0], status: data[1], followers: f})
     if(data[1] == 'OPEN')
       for follower in f
         email_user(follower, data[0])
-    
+
 
   )
   .on('end', ->
-      
+      setTimeout(check_course_helper, 5000)
   )    
 
 
