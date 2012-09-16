@@ -15,12 +15,16 @@ email_user = (user, course) ->
     }
   })
 
+  d = new Date().getTime()
+
   mailOptions = {
     from: "Course Alert <mycoursealert@gmail.com>", 
     to: "pennappsdemo@gmail.com",
     subject: "Course Alert", 
     text: "", 
-    html: "HTML COURSE" 
+    html: '<p id="to">Student,</p>
+          <p id="body">Your desired class is open for registration as of #{d}. You can register now at https://medley09.isc-seo.upenn.edu/pennInTouch/</p>
+          <p id="end">Happy Registering!</p>'
   }
 
   smtpTransport.sendMail(mailOptions, (error, response) ->
