@@ -13,7 +13,7 @@ class Course extends Spine.Model
   addFollower: (user) -> 
     for c in @followers
       if (user == c)
-        alert "you're already enrolled in that course"
+        alert "Error: You're already enrolled in that course"
         return @followers
     f = @followers
     f.push(user)

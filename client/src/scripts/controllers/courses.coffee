@@ -54,10 +54,10 @@ class Courses extends Spine.Controller
         @change course
         @input.val("")
       else
-        alert 'course does not exist'
+        alert 'Error: Course does not exist.'
       @render()
     catch error
-      alert 'that course does not exist'
+      alert 'Error: That course does not exist.'
 
       # course = Course.create(id: i)
     # if course
