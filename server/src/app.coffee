@@ -54,6 +54,7 @@ app.get '/amplify', routes.amplify
 # app.get '/:hash', getTag, routes.amplify #ADD REGEX
 # app.get '/api/users', api.get_users
 app.get '/courses', api.all_courses_csv
+app.post '/follow/:course/:id', api.follow_course
 
 
 # app.get '/api/amplifyme', api.get_amplifyme

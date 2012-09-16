@@ -24,3 +24,6 @@ exports.all_courses_csv = (req, res) ->
   .on('end', ->
       res.send(results)
   )    
+
+exports.follow_course = (req, res) ->
+  console.log 'follow course'
