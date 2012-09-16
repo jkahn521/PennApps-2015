@@ -23,13 +23,13 @@ email_user = (user, course) ->
     html: "HTML COURSE" 
   }
 
-  # smtpTransport.sendMail(mailOptions, (error, response) ->
-  #   if(error)
-  #     console.log(error)
-  #   else
-  #     console.log("Message sent: " + response.message)
-  #     res.send('Email was sent')
-  # )
+  smtpTransport.sendMail(mailOptions, (error, response) ->
+    if(error)
+      console.log(error)
+    else
+      console.log("Message sent: " + response.message)
+      res.send('Email was sent')
+  )
 
 exports.check_courses = ->
   console.log 'check courses'
