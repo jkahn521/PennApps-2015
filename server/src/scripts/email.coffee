@@ -23,7 +23,7 @@ email_user = (user, course) ->
     subject: "Course Alert", 
     text: "", 
     html: '<p id="to">Student,</p>
-          <p id="body">Your desired class is open for registration as of #{d}. You can register now at https://medley09.isc-seo.upenn.edu/pennInTouch/</p>
+          <p id="body">Your desired class is open for registration as of ' + d + '. You can register now at https://medley09.isc-seo.upenn.edu/pennInTouch/</p>
           <p id="end">Happy Registering!</p>'
   }
 
