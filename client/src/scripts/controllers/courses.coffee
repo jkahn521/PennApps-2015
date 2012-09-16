@@ -29,12 +29,12 @@ class Courses extends Spine.Controller
     Course.bind("refresh", @render)
     Course.bind("create", @createCourse)
     Course.fetch()
-    # Course.refresh({id: "cis100", status: "open"})
 
 
   render:  =>
     console.log 'running render'
-    @list.render(Course.all())
+    # @list.render(Course.all())
+    @list.render(@userCourses())
   
   change: (item) =>
     @current = item
@@ -47,12 +47,28 @@ class Courses extends Spine.Controller
   submit: (e) =>
     e.preventDefault()
     i = @input.val()
-    course = Course.create(id: i)
+    course = Course.find(i)
     if course
-      course.save()
+      course.addFollower("olliejkahn@yahoo.com")
       @change course
       @input.val("")
     else
-      alert 'invalid course'
+      alert 'course does not exist'
+    # course = Course.create(id: i)
+    # if course
+    #   course.save()
+    #   @change course
+    #   @input.val("")
+    # else
+    #   alert 'invalid course'
+
+  userCourses: => 
+    Course.select(
+      (course) ->
+        for c in course.followers
+          if ("olliejkahn@yahoo.com" == c)
+            return true
+        false
+    )
 
 module.exports = Courses
