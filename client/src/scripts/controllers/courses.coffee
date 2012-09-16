@@ -50,7 +50,7 @@ class Courses extends Spine.Controller
       i = @input.val()
       course = Course.find(i)
       if course
-        course.addFollower("olliejkahn@yahoo.com")
+        course.addFollower("pennappsdemo@gmail.com")
         @change course
         @input.val("")
       else
@@ -71,7 +71,7 @@ class Courses extends Spine.Controller
     Course.select(
       (course) ->
         for c in course.followers
-          if ("olliejkahn@yahoo.com" == c)
+          if ("pennappsdemo@gmail.com" == c)
             return true
         false
     )
