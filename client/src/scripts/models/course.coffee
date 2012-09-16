@@ -1,5 +1,6 @@
 Spine = require 'assets/lib/spine'
 require 'assets/lib/ajax'
+$ = Spine.$
 
 class Course extends Spine.Model
   @configure 'Course', 'status', 'followers'
@@ -10,7 +11,6 @@ class Course extends Spine.Model
   #   ''
 
   addFollower: (user) -> 
-    console.log 'before ' + @followers
     for c in @followers
       if (user == c)
         alert "you're already enrolled in that course"
@@ -18,7 +18,9 @@ class Course extends Spine.Model
     f = @followers
     f.push(user)
     @followers = f
-    console.log 'after ' + @followers
+    $.post(
+      'follow/' + @id + '/' + user
+    )
 
 
 module.exports = Course
