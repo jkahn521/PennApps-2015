@@ -38,8 +38,14 @@ exports.check_courses = ->
   console.log 'check courses'
   check_course_helper()
 
+stopEmail = false
+
 check_course_helper = ->
   console.log 'check course helper'
+
+  if stopEmail
+    console.log 'stop sending emails'
+    return
 
   csv()
   .fromPath(__dirname + '/../../../class_data.csv')
@@ -53,13 +59,17 @@ check_course_helper = ->
     if(data[1] == 'OPEN')
       for follower in f
         email_user(follower, data[0])
+        stopEmail=true
         return
-    setTimeout(check_course_helper, 3000)
+    
 
 
   )
   .on('end', ->
-      
-  )    
+    setTimeout(check_course_helper, 3000)  
+  )
+  .on('error', ->
+    console.log 'ERROR in data'
+  ) 
 
 
