@@ -1,8 +1,6 @@
-# config     = require '../config'
-# utils      = require '../utils/amplifyme'
 {resp}     = require './response'
 fs = require 'fs'
-# sys = require 'sys'
+
 
 csv = require 'csv'
 nodemailer = require 'nodemailer'
