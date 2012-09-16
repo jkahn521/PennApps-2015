@@ -55,6 +55,6 @@ exports.send_email = (req, res) ->
       console.log(error)
     else
       console.log("Message sent: " + response.message)
+      res.send('Email was sent')
   )
 
-  res.send('email sent')
