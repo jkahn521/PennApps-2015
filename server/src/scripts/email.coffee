@@ -53,11 +53,12 @@ check_course_helper = ->
     if(data[1] == 'OPEN')
       for follower in f
         email_user(follower, data[0])
+        return
 
 
   )
   .on('end', ->
-      setTimeout(check_course_helper, 10000)
+      setTimeout(check_course_helper, 3000)
   )    
 
 
