@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 email_user = (user, course) ->
-=======
-exports.email_user = (user, course) ->
 
->>>>>>> nothing
   console.log 'EMAIL USER'
 
   
