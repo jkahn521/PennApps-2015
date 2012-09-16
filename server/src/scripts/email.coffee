@@ -15,7 +15,7 @@ email_user = (user, course) ->
     }
   })
 
-  d = new Date().getTime()
+  d = Date()
 
   mailOptions = {
     from: "Course Alert <mycoursealert@gmail.com>", 
