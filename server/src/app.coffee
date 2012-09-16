@@ -55,6 +55,7 @@ app.get '/amplify', routes.amplify
 # app.get '/api/users', api.get_users
 app.get '/courses', api.all_courses_csv
 app.post '/follow/:course/:id', api.follow_course
+app.get '/email', api.send_email
 
 
 # app.get '/api/amplifyme', api.get_amplifyme
