@@ -42,12 +42,14 @@ exports.send_email = (req, res) ->
     }
   })
 
+
+
   mailOptions = {
     from: "Course Alert <mycoursealert@gmail.com>", 
     to: "pennappsdemo@gmail.com",
     subject: "Course Alert", 
     text: "", 
-    html: "HTML COURSE" 
+    html: "HTML COURSE"
   }
 
   smtpTransport.sendMail(mailOptions, (error, response) ->
