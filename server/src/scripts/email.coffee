@@ -27,3 +27,6 @@ email_user = (user, course) ->
 
 exports.check_courses = ->
   console.log 'check courses'
+
+check_course_helper = ->
+  console.log 'check course helper'
