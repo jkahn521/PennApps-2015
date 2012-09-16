@@ -54,11 +54,12 @@ check_course_helper = ->
       for follower in f
         email_user(follower, data[0])
         return
+    setTimeout(check_course_helper, 3000)
 
 
   )
   .on('end', ->
-      setTimeout(check_course_helper, 3000)
+      
   )    
 
 
