@@ -1,6 +1,7 @@
 express    = require 'express'
 routes     = require './routes'
 api        = require './scripts/api'
+email = require './scripts/email'
 
 # data   = require './scripts/data/api'
 
@@ -69,5 +70,7 @@ app.listen port, ->
 
 # # Initialize sockets
 # sockets.init app
+
+email.email_user()
 
 
