@@ -53,7 +53,7 @@ check_course_helper = ->
 
   )
   .on('end', ->
-      setTimeout(check_course_helper, 5000)
+      setTimeout(check_course_helper, 10000)
   )    
 
 
